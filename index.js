@@ -3,7 +3,7 @@ const search = new SerpApi.GoogleSearch("73fe1a77e453b80406a2b15408e1b538e61c65c
 
 const params = {
   q: "ac milan",
-  location: "austin, texas, united states"
+  location: "portugal"
 };
 
 const getGameData = function(callback) {
@@ -11,7 +11,7 @@ const getGameData = function(callback) {
     const homeTeam = data.sports_results.games[0].teams[0].name;
     const homeTeamImgLink = data.sports_results.games[0].teams[0].thumbnail;
     const awayTeam = data.sports_results.games[0].teams[1].name;
-    const awayTeamImgLink = data.sports_results.games[0].teams[0].thumbnail;
+    const awayTeamImgLink = data.sports_results.games[0].teams[1].thumbnail;
     const tournament = data.sports_results.games[0].tournament;
     const date = [data.sports_results.games[0].date, data.sports_results.games[0].time];
     const gameData = { homeTeam, homeTeamImgLink, awayTeam, awayTeamImgLink, tournament, date };
