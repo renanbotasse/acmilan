@@ -1,18 +1,11 @@
-const SerpApi = require('google-search-results-nodejs');
-const search = new SerpApi.GoogleSearch("X");
 
-const params = {
-  q: "ac milan",
-  location: "portugal"
-  game_spotlight: "games"
-};
+const { getGameData } = require('./index.js');
 
-const callback = function(data) {
-	console.log(data["sports_results"]);
-};
-
-// Show result as JSON
-const result = search.json(params, callback);
-console.log(search.json(params, callback));
-console.log(result);
-console.log(result);
+getGameData(function(gameData) {
+  console.log(gameData);
+  const today = document.querySelector('.today');
+  const options = { weekday: 'long', month: 'long', day: 'numeric', timeZoneName: 'short' };
+  const todayDate = new Date().toLocaleString('en-US', options);
+  today.textContent = todayDate;
+  console.log(todayDate);
+});
