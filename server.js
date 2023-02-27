@@ -22,8 +22,10 @@ server.use(express.static('public'));
 server.get('/', function(req, res) {
   getGameData(function(gameData) {
     const today = new Date().toDateString();
+    const local = Intl.DateTimeFormat().resolvedOptions().timeZone;
     const context = {
       title: 'AC Milan Game',
+      localHtml: local,
       date: today,
       tournament: gameData.tournament,
       homeTeam: gameData.homeTeam,
