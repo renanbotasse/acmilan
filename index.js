@@ -1,5 +1,5 @@
 const SerpApi = require('google-search-results-nodejs');
-const search = new SerpApi.GoogleSearch("*");
+const search = new SerpApi.GoogleSearch("73fe1a77e453b80406a2b15408e1b538e61c65c0d381f644bbb53feca5208643");
 
 const params = {
   q: "ac milan",
